@@ -1,4 +1,4 @@
-# Invoice-Extraction-QC-Service
+# Invoice-Extraction-QC-Service-Rahul-Vakiti
 This project is a production-style invoice extraction and validation system designed to handle real-world PDF invoices with varying layouts, languages, and data quality.  Instead of relying on a single technique, the system uses a multi-tier hybrid architecture that balances speed, accuracy, and cost, similar to how enterprise data pipeline
 # Project Overview
 The project delivers an Enterprise-Grade Hybrid AI Service that resolves the challenge of turning chaotic, unstructured B2B PDFs into reliable, standardized JSON data for immediate accounting processing.
