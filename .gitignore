@@ -1,0 +1,19 @@
+# Python Virtual Environment
+venv/
+__pycache__/
+*.pyc
+*.pyd
+
+# Dependencies
+/temp_uploads/
+
+# Configuration and Keys (CRITICAL)
+.env
+validation_report.json
+SIMPLE_TEST_REPORT.json
+FINAL_REPORT.json
+resultssss.json
+
+# Frontend specific (if applicable)
+/frontend/node_modules/
+/frontend/dist/

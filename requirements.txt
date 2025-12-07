@@ -1,0 +1,24 @@
+# --- FastAPI & API Dependencies
+fastapi
+uvicorn[standard]
+python-multipart
+starlette
+
+# --- Core Extraction & PDF Processing 
+pdfplumber
+pdfminer.six
+re
+langdetect
+python-dotenv
+shutil
+pathlib
+typing
+
+# --- LLM Integration 
+google-generativeai
+google-api-core
+google-auth
+
+# --- Data Validation & Utilities (
+requests
+pydantic

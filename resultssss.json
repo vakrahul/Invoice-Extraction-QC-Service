@@ -1,0 +1,19 @@
+[
+  {
+    "invoice_number": "UNKNOWN_INV",
+    "invoice_date": "2022-05-02",
+    "due_date": null,
+    "seller_name": "Seite 1 von 1",
+    "buyer_name": "Unknown Buyer",
+    "payment_terms": null,
+    "delivery_terms": null,
+    "cost_center": null,
+    "currency": "EUR",
+    "net_total": 0.0,
+    "tax_amount": 0.0,
+    "gross_total": 0.0,
+    "line_items": [],
+    "detected_language": "DE",
+    "extraction_method": "tier1_regex_layout"
+  }
+]

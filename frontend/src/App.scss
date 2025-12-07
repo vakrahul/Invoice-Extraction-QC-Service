@@ -1,0 +1,474 @@
+/* frontend/src/App.scss */
+
+// Define Colors
+$color-primary: #1d4ed8; // Blue-700
+$color-primary-light: #eff6ff; // Blue-50
+$color-success: #15803d; // Green-700
+$color-success-light: #dcfce7; // Green-100
+$color-danger: #b91c1c; // Red-700
+$color-danger-light: #fee2e2; // Red-100
+$color-text: #1f2937; // Slate-800
+$color-background: #f8fafc; // Gray-50
+
+// Basic Utilities for Components
+.text-right { text-align: right; }
+.color-blue { color: $color-primary; }
+.color-green { color: $color-success; }
+.color-red { color: $color-danger; }
+
+
+// --- MAIN LAYOUT ---
+.qc-container {
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 72rem; // max-w-6xl
+    margin: 0 auto;
+}
+
+// --- HEADER ---
+.qc-header {
+    margin-bottom: 2rem;
+    text-align: center;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+}
+.qc-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+.qc-title-icon {
+    width: 2rem;
+    height: 2rem;
+}
+.qc-subtitle {
+    color: #6b7280;
+}
+
+// --- CARD BASE ---
+.qc-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border: 1px solid #f3f4f6;
+}
+
+// --- ACTION/UPLOAD SECTION ---
+.qc-action-section {
+    margin-bottom: 2rem;
+}
+.qc-input-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.qc-file-input {
+    flex-grow: 1;
+    .qc-file-input-field {
+        width: 100%;
+        display: block;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        color: #4b5563;
+        
+        &::file-selector-button {
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            border: 0;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background-color: $color-primary-light;
+            color: $color-primary;
+            cursor: pointer;
+            transition: background-color 0.15s;
+            &:hover {
+                background-color: #dbeafe; 
+            }
+        }
+    }
+    .qc-file-name {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: #4b5563;
+        strong { font-weight: 600; }
+    }
+}
+.qc-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: $color-primary;
+    color: white;
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.15s;
+    min-width: 150px;
+    justify-content: center;
+    &:hover:not(:disabled) {
+        background-color: darken($color-primary, 5%);
+    }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .qc-loader {
+        width: 1.25rem;
+        height: 1.25rem;
+        animation: spin 1s linear infinite;
+    }
+}
+
+// --- RESULTS SECTION ---
+.qc-results-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: $color-text;
+}
+.qc-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.qc-detail-item {
+    padding: 0.5rem 0;
+}
+.qc-detail-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.qc-detail-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $color-text;
+}
+
+
+// --- MISSING VALUES & ERRORS ---
+.qc-missing-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+.qc-missing-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-danger;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.qc-missing-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.4;
+    li {
+        margin-bottom: 0.25rem;
+        &.qc-critical-error {
+            color: $color-danger;
+            font-weight: 600;
+        }
+    }
+}
+
+// --- TABLE STYLES ---
+.qc-table-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+.qc-table-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    .qc-table-icon {
+        color: $color-success;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+.qc-table-container {
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+.qc-table {
+    min-width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.875rem;
+    
+    .qc-table-head {
+        background-color: #f3f4f6;
+        th {
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            color: #6b7280;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+    }
+    .qc-table-tr {
+        border-bottom: 1px solid #f3f4f6;
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: #fafafa;
+        }
+    }
+    .qc-table-td {
+        padding: 1rem 1.5rem;
+        color: #374151;
+        &.font-medium {
+            font-weight: 500;
+        }
+        &.font-semibold {
+            font-weight: 600;
+            color: $color-primary;
+        }
+    }
+}
+
+// --- KEYFRAME FOR LOADER ---
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/* frontend/src/App.scss (Add these styles) */
+
+/* --- Advanced Layout for Side-by-Side Preview --- */
+.qc-main-content-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0; /* Add padding here for separation */
+}
+
+.qc-extracted-data-column {
+    flex-grow: 1; /* Takes remaining space */
+    min-width: 50%; /* Ensures it doesn't get too narrow */
+}
+
+.qc-preview-column {
+    flex-shrink: 0; /* Prevents column from shrinking */
+    width: 45%; /* Allocates space for the PDF image */
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden; /* Ensures image fits */
+}
+
+.qc-pdf-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image is fully visible */
+}
+
+/* Remove old placeholder styling */
+.qc-preview-area {
+    display: none; /* Hide the old placeholder block */
+}
+/* frontend/src/App.scss (Add these styles) */
+
+// ... (Existing styles above) ...
+
+// --- MODAL STYLES (For PDF Preview) ---
+.qc-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.qc-modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.qc-modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $color-text;
+}
+
+.qc-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    &:hover {
+        color: $color-danger;
+    }
+}
+
+.qc-modal-viewer {
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+
+.qc-pdf-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Ensure button styling for the new button
+.qc-small-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+/* frontend/src/App.scss (Add these styles) */
+
+// --- MODAL STYLES (For PDF Preview) ---
+
+// 1. Overlay (The dark background that covers the screen)
+.qc-modal-overlay {
+    position: fixed; /* Stays in place when scrolling */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it sits above all other content */
+}
+
+// 2. Modal Content Box
+.qc-modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 900px; /* Max size for a comfortable viewing area */
+    max-height: 90vh; /* Limits height to 90% of viewport */
+    overflow-y: auto; /* Allows scrolling inside the modal */
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.qc-modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text); /* Ensure color consistency */
+}
+
+// 3. Close Button
+.qc-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 0.5rem;
+    &:hover {
+        color: var(--color-danger);
+    }
+}
+
+// 4. PDF Viewer Container
+.qc-modal-viewer {
+    border: 1px solid #ddd;
+    background-color: #eee; /* Light gray background for image contrast */
+    padding: 10px;
+}
+
+// 5. The Image itself (Most important part for display)
+.qc-pdf-image {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    object-fit: contain; /* Ensures the image fits within its container */
+}
+
+// Ensure button styling for the new button
+.qc-small-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+/* frontend/src/App.scss (Ensure these styles are present) */
+
+// ... (existing modal styles) ...
+
+.qc-modal-content {
+    // Make modal wider for better PDF viewing
+    max-width: 1000px; 
+    width: 95%;
+    // ...
+}
+
+.qc-modal-viewer {
+    // Sets a dynamic height for the embedded PDF viewer
+    width: 100%;
+    height: 70vh; 
+    border: 1px solid #ddd;
+    background-color: #eee;
+    // Remove background from the viewer itself to ensure the iframe looks clean
+    padding: 0; 
+}
+
+.qc-pdf-iframe {
+    width: 100%;
+    height: 100%; /* Iframe takes up the full viewer size */
+}

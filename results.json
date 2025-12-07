@@ -1,0 +1,52 @@
+[
+  {
+    "invoice_number": "AUFNR234953",
+    "invoice_date": "2022-05-02",
+    "due_date": null,
+    "seller_name": "Softwareunternehmen",
+    "buyer_name": "Unternehmen f\u00fcr Computerteile",
+    "currency": "EUR",
+    "net_total": 216.0,
+    "tax_amount": 41.04,
+    "gross_total": 257.04,
+    "payment_terms": "0 Tage 2,0% Skonto",
+    "delivery_terms": "Keine Angabe",
+    "cost_center": "19257",
+    "line_items": [
+      {
+        "description": "LED-Monitore 12'",
+        "quantity": 4.0,
+        "unit_price": 16.0,
+        "line_total": 64.0,
+        "unit_description": "VE",
+        "supplier_article_no": "000252944C",
+        "internal_material_no": "48805"
+      },
+      {
+        "description": "USB-Maus",
+        "quantity": 2.0,
+        "unit_price": 16.0,
+        "line_total": 32.0,
+        "unit_description": "VE",
+        "supplier_article_no": "000252944C",
+        "internal_material_no": "49786"
+      },
+      {
+        "description": "mechanische Tastatur",
+        "quantity": 5.0,
+        "unit_price": 24.0,
+        "line_total": 120.0,
+        "unit_description": "VE",
+        "supplier_article_no": "00025843C",
+        "internal_material_no": "23359"
+      }
+    ],
+    "extraction_method": "tier2_gemini_hybrid",
+    "processing_time": 17.19,
+    "validation_status": "VALID",
+    "quality_score": 95,
+    "missing_values": [
+      "missing_info: due_date"
+    ]
+  }
+]
