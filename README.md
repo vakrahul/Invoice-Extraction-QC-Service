@@ -122,6 +122,8 @@ This design transforms the LLM into a **semantic reasoning layer** instead of a 
 ✅ Demonstrates production-grade AI governance  
 
 > **Result:** AI is used as a *precision recovery tool*, not as a dependency — aligning the system with real-world enterprise design principles.
+## video demo 
+https://drive.google.com/file/d/1SQTBMUnArfpoVRUGr_D2xP4oTCExn8Ja/view?usp=sharing
 
 
 
